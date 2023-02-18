@@ -1,0 +1,128 @@
+header {
+    display: flex;
+    height: clamp(50px, 7.50vh, 100px);
+    background-color: #f0f0f0;
+}
+header>a{
+    width:9vw;
+}
+
+header>a>img {
+    width: auto;
+    height: 90%;
+    margin: 1% 0 1% 2%;
+}
+
+header>nav>ul {
+    display: flex;
+    width: 89vw;
+    justify-content:flex-end;
+    align-items: center;
+    list-style: none;
+    height: 100%;
+    padding:0;
+}/*-----------main-------------*/
+main>section{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    height:76vh;
+}
+form {
+    padding:2.5%;
+    border-radius: 20px;
+    background-color: grey;
+    width: 30%;
+    height: 30%;
+    min-height: 120px;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-areas:
+        "unLabel unInput"
+        "pwLabel pwInput"
+        ". submit"
+      
+}
+
+form>label:first-of-type {
+    grid-area: unLabel;
+    margin:0;
+    text-align: center;
+    padding-top:5%;
+
+
+}
+
+form>input:first-of-type {
+    grid-area: unInput;
+    border-radius:10px;
+    height:100%;
+}
+
+form>label:last-of-type {
+    grid-area: pwLabel;
+    margin:0;
+    text-align: center;
+    padding-top:5%;
+
+}
+
+form>input:nth-of-type(2) {
+    grid-area: pwInput;
+    border-radius:10px;
+    height:100%;
+}
+form>input:last-of-type {
+    grid-area: submit;
+margin-left:25%;
+width:50%;
+text-align:center;
+}
+
+/* -------------------footer ------------ */
+
+footer{
+
+ height: 15vh;
+    background-color: #f0f0f0;
+    display:flex;
+    align-items: center;
+}
+
+footer>aside{
+    width:40%;
+    text-align: center;
+    
+
+}
+footer>div{
+    height:100%;
+    width:60%;
+    display: grid;
+    grid-template-columns: repeat(1fr, 5);
+    
+    grid-template-areas: ". . title . ." " . partner1 . partner2 .";
+}
+footer>div>p{
+    grid-area:title;
+    text-align:center;
+    font-size: 8pt;
+    margin:0;
+}
+footer>div>div:first-of-type{
+    grid-area: partner1;
+    height:inherit;
+    text-align: center;
+
+    
+}footer>div>div:last-of-type{
+    grid-area: partner2;
+    height:inherit;
+    text-align: center;
+    
+}
+
+footer>div>div:last-of-type>img,footer>div>div:first-of-type>img{
+    width: auto;
+    height: 8vh;
+}
