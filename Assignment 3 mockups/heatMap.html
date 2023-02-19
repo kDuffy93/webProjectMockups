@@ -12,8 +12,11 @@
         integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"
-        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
-        crossorigin="anonymous"></script>
+        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"
+        defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="./scripts/heatMap.js" defer></script>
     <!-- custom Style Sheets-->
     <link rel="stylesheet" href="css/siteStyles.css">
     <link rel="stylesheet" href="css/heatMap.css">
@@ -32,8 +35,8 @@
 
         <nav>
             <ul>
-                <li>View Data</li>
-                <li>Log Out</li>
+                <li><a href="#">View Data</a></li>
+                <li><a href="#">Log Out</a></li>
             </ul>
         </nav>
         </div>
@@ -42,36 +45,128 @@
     <main class="container">
         <div>
             <li>Barrie</li>
-            <li class="c2r1"><p>37</p><p>($1978.34)</p></li>
-            <li class="c3r1"><p>66</p><p>($1978.34)</p></li>
-            <li class="c4r1"><p>73</p><p>($1978.34)</p></li>
-            <li class="c5r1"><p>22</p><p>($1978.34)</p></li>
+            <li class="c2r1">
+                <p>37</p>
+                <p>($1978.34)</p>
+            </li>
+            <li class="c3r1">
+                <p>66</p>
+                <p>($1978.34)</p>
+            </li>
+            <li class="c4r1">
+                <p>73</p>
+                <p>($1978.34)</p>
+            </li>
+            <li class="c5r1">
+                <p>22</p>
+                <p>($1978.34)</p>
+            </li>
             <li>Collingwood</li>
-            <li class="c2r2"><p>22</p><p>($1978.34)</p></li>
-            <li class="c3r2"><p>18</p><p>($1978.34)</p></li>
-            <li class="c4r2"><p>32</p><p>($1978.34)</p></li>
-            <li class="c5r2"><p>37</p><p>($1978.34)</p></li>
+            <li class="c2r2">
+                <p>22</p>
+                <p>($1978.34)</p>
+            </li>
+            <li class="c3r2">
+                <p>18</p>
+                <p>($1978.34)</p>
+            </li>
+            <li class="c4r2">
+                <p>32</p>
+                <p>($1978.34)</p>
+            </li>
+            <li class="c5r2">
+                <p>37</p>
+                <p>($1978.34)</p>
+            </li>
             <li>Midland</li>
-            <li class="c2r3"><p>12</p><p>($1978.34)</p></li>
-            <li class="c3r3"><p>21</p><p>($1978.34)</p></li>
-            <li class="c4r3"><p>17</p><p>($1978.34)</p></li>
-            <li class="c5r3"><p>33</p><p>($1978.34)</p></li>
+            <li class="c2r3">
+                <p>12</p>
+                <p>($1978.34)</p>
+            </li>
+            <li class="c3r3">
+                <p>21</p>
+                <p>($1978.34)</p>
+            </li>
+            <li class="c4r3">
+                <p>17</p>
+                <p>($1978.34)</p>
+            </li>
+            <li class="c5r3">
+                <p>33</p>
+                <p>($1978.34)</p>
+            </li>
             <li>Orillia</li>
-            <li class="c2r4"><p>33</p><p>($1978.34)</p></li>
-            <li class="c3r4"><p>41</p><p>($1978.34)</p></li>
-            <li class="c4r4"><p>28</p><p>($1978.34)</p></li>
-            <li class="c5r4"><p>45</p><p>($1978.34)</p></li>
+            <li class="c2r4">
+                <p>33</p>
+                <p>($1978.34)</p>
+            </li>
+            <li class="c3r4">
+                <p>41</p>
+                <p>($1978.34)</p>
+            </li>
+            <li class="c4r4">
+                <p>28</p>
+                <p>($1978.34)</p>
+            </li>
+            <li class="c5r4">
+                <p>45</p>
+                <p>($1978.34)</p>
+            </li>
             <li>Alliston</li>
-            <li class="c2r5"><p>26</p><p>($1978.34)</p></li>
-            <li class="c3r5"><p>13</p><p>($1978.34)</p></li>
-            <li class="c4r5"><p>7</p><p>($1978.34)</p></li>
-            <li class="c5r5"><p>23</p><p>($1978.34)</p></li>
-            <li></li>
+            <li class="c2r5">
+                <p>26</p>
+                <p>($1978.34)</p>
+            </li>
+            <li class="c3r5">
+                <p>13</p>
+                <p>($1978.34)</p>
+            </li>
+            <li class="c4r5">
+                <p>7</p>
+                <p>($1978.34)</p>
+            </li>
+            <li class="c5r5">
+                <p>23</p>
+                <p>($1978.34)</p>
+            </li>
+            <li class="filter black">
+                <div class="offWhite border3pxblack">
+                    <div>
+                        <label for="areaCheck">Area</label>
+                        <input name="areaFilter" id="areaCheck" type="radio">
+                    </div>
+                    <div>
+                        <label for="municipalityCheck">Municipality</label>
+                        <input name="areaFilter" id="municipalityCheck" type="radio">
+                    </div>
+                </div>
+                <div class="offWhite border2pxblack">
+                    <div>
+                        <label for="typeCheck">Housing Type</label>
+                        <input name="typeFilter" id="typeCheck" type="radio">
+                    </div>
+                    <div>
+                        <label for="sizeCheck">Unit Size</label>
+                        <input name="typeFilter" id="sizeCheck" type="radio">
+                    </div>
+                </div>
+            </li>
             <li class="vertical">Apartment</li>
             <li class="vertical">Attached SDF</li>
             <li class="vertical">Detached SDF</li>
             <li class="vertical">Shared</li>
         </div>
+        <aside>
+            <h2>Filter By</h2>
+            <div>
+                <span id="noUnits">Number Of Units</span>
+                <label id="slider" class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+                <span id="avgRent">Average Rent</span>
+            </div>
+        </aside>
     </main>
 
     <footer>

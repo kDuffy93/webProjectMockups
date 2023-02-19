@@ -1,8 +1,11 @@
+main{
+    display:flex;
+}
 main>div {
     width: 60%;
     height: 70vh;
     margin-top: 2.5vh;
-    margin-left: 20%;
+    margin-left: 15%;
     display: grid;
     grid-template-columns: 37.5% repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr) 37.5%;
@@ -16,6 +19,38 @@ main>div {
     ;
 
 }
+main>aside{
+    height:100%;
+    width:25%;
+    padding-top:2.5vh;
+    padding-left:3.5vw;
+}
+main>aside>h2{
+    font-size: smaller;
+    text-decoration: underline;
+    text-align: center;
+}
+main>aside>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top:10%;
+
+}
+
+
+
+#noUnits{
+color: lightgreen;
+font-size: smaller;
+}
+#avgRent{
+    color:#ccc;
+font-size: smaller;
+
+}
+
 
 main>div>li {
     list-style: none;
@@ -30,6 +65,7 @@ main>div>li {
 main>div>li>p:nth-of-type(2) {
     font-size: 50%;
 }
+
 main>div>li>p {
     font-weight: bolder;
 }
@@ -40,6 +76,56 @@ main>div>li>p {
     padding-left: 33%;
     padding-top: 0;
 }
+
+.filter {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas:
+        "area ."
+        "area ."
+        "area type"
+        ". type"
+        ". type"
+        ". type";
+        padding:0;
+
+
+}
+
+
+
+.filter>div:nth-of-type(1) {
+    grid-area: area;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.filter>div:nth-of-type(2) {
+    grid-area: type;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+
+}
+
+label{
+    text-align: left;
+    width:75%;
+}
+
+.black{
+    background-color:black;
+}
+.offWhite{
+    background-color:#f6f6f6;
+}
+.border3pxblack{
+    border: 3px solid black;
+}
+
 
 .c2r1 {
     background-color: #FE3808;
@@ -54,11 +140,12 @@ main>div>li>p {
 }
 
 .c5r1 {
-    background-color: #FDAE18;   
+    background-color: #FDAE18;
 }
 
 .c2r2 {
-    background-color: #FDAE18; /* */
+    background-color: #FDAE18;
+    /* */
 }
 
 .c3r2 {
@@ -104,6 +191,7 @@ main>div>li>p {
 .c5r4 {
     background-color: #FE3808;
 }
+
 .c2r5 {
     background-color: #FDAE18;
 }
@@ -120,3 +208,66 @@ main>div>li>p {
     background-color: #FDAE18;
 }
 
+
+/* -- slider css --*/
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: lightgreen;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
