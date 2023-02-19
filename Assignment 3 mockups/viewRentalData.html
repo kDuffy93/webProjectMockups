@@ -5,30 +5,207 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- Latest compiled and minified CSS  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+        crossorigin="anonymous"></script>
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- custom Style Sheets-->
+    <link rel="stylesheet" href="css/siteStyles.css">
+    <link rel="stylesheet" href="css/rentalData.css">
 </head>
 <body>
-
-<header></header>
-<main>
-    <div class="container"> 
-        <section id="FilterSection">
-
+    <header>
+        <a href="#">
+            <img src="./public/images/logo.png" />
+        </a>
+        <div class="toggle">
+            <input type="checkbox" name="check" />
+        </div>
+    </header>
+    <main>
+        <section class="buttonSection">
+            <button id="openModal">&emsp;&emsp;≡&emsp;filter&emsp;</button>
+            <section id="modalArea" class="modalArea">
+              <div id="modalBg" class="modalBg">
+              </div>
+              <div class="modalWrapper">
+                <div class="modalContents">
+                    <h1>Filter</h1>
+                    <h2>City/Town</h2>
+                    <button class="cityTown" type="button">Alliston/Bradford</button>
+                    <button class="cityTown" type="button">Barrie</button>
+                    <button class="cityTown" type="button">Collingwood</button>
+                    <button class="cityTown" type="button">Midland</button>
+                    <button class="cityTown" type="button">Orillia</button>
+                    <h2 class="priceRange">Price Range</h2>
+                    <div class="price">
+                        <div class="minPrice">
+                            <label for="minprice">Min Price:&nbsp;</label>
+                            <input type="text" id="minprice" size="15" value="$ ">
+                        </div>
+                        <span>-</span>
+                        <div class="maxPrice">
+                            <label for="maxprice">Max Price:&nbsp;</label>
+                            <input type="text" id="maxprice" size="15" value="$ ">
+                        </div>
+                    </div>
+                    <h2 class="housingType">Housing Type</h2>
+                    <button class="housing-tp-buttton" type="button"><i class="fa-solid fa-house"></i>detached</button>
+                    <button class="housing-tp-buttton" type="button"><i class="fa-solid fa-city"></i>attached</button>
+                    <button class="housing-tp-buttton" type="button"><i class="fa-solid fa-house-chimney"></i>house</button>
+                    <button class="housing-tp-buttton" type="button"><i class="fa-solid fa-building"></i>apartment</button>
+                    <button class="housing-tp-buttton" type="button"><i class="fa-solid fa-stairs"></i>basement</button>
+                    <h2 class="numberOfBedrooms">Number of Bedrooms</h2>
+                    <input type="range" id="rangeBedrooms" min="1" max="6" step="1">
+                    <h3>You are choosing<span id="current-value"></span>bedrooms now.</h3>
+                    <h2 class="typeOfLease">Type of Lease</h2>
+                    <div class="lease">
+                        <input type="checkbox" name="leaseTerm" value="shortterm" id="shortterm">
+                        <label for="shortterm" class="leaseLabel">Less than 6 months</label>
+                        <input type="checkbox" name="leaseTerm" value="middleterm" id="middleterm">
+                        <label for="middleterm" class="leaseLabel">6 months to 12 months</label>
+                        <input type="checkbox" name="leaseTerm" value="longterm" id="longterm">
+                        <label for="longterm" class="leaseLabel">Over 1 year</label>
+                        <input type="checkbox" name="leaseTerm" value="spring" id="sprint">
+                        <label for="spring" class="leaseLabel">Spring (Seasonal Rental)</label>
+                        <input type="checkbox" name="leaseTerm" value="summer" id="summer">
+                        <label for="summer" class="leaseLabel">Summer (Seasonal Rental)</label>
+                        <input type="checkbox" name="leaseTerm" value="fall" id="fall">
+                        <label for="fall" class="leaseLabel">Fall (Seasonal Rental)</label>
+                        <input type="checkbox" name="leaseTerm" value="winter" id="winter">
+                        <label for="winter" class="leaseLabel">Winter (Seasonal Rental)</label>
+                    </div>
+                </div>
+                <div id="closeModal" class="closeModal">
+                    ×
+                </div>
+              </div>
+            </section>
+            <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Categories
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">City/Town</a></li>
+                  <li><a class="dropdown-item" href="#">Price</a></li>
+                  <li><a class="dropdown-item" href="#">Housing Type</a></li>
+                  <li><a class="dropdown-item" href="#">Number of bedrooms</a></li>
+                  <li><a class="dropdown-item" href="#">Type of Lease</a></li>
+                </ul>
+            </div>
+            <button class="exportAll" type="button">Export All</button>
+            <button class="exportCurrent" type="button">Export Current</button>
+            <button class="getData" type="button">Get Data</button>
         </section>
-        <section id="cardSection">
-
-        </section>
-    </div>
-</main>
-<footer></footer>
-
-
-
-
-
-
-
-
-
-    
+        <table>
+            <tr>
+                <th>Stratified Area</th>
+                <th>Municipality</th>
+                <th>Street #</th>
+                <th>Street Name</th>
+                <th>Housing Type</th>
+                <th>Unit Size</th>
+                <th>Secondary Suite</th>
+                <th>Monthly Rent</th>
+                <th>Utilities Included</th>
+                <th>Landlord Type</th>
+                <th>Stability</th>
+            </tr>
+            <tr>
+                <td class="icon row1">Alliston/Bradford</td>
+                <td>Bradford West</td>
+                <td>280</td>
+                <td>MILLER PARK AVE</td>
+                <td>House</td>
+                <td>2 Bedrooms</td>
+                <td>Yes</td>
+                <td>$2,300</td>
+                <td>Yes</td>
+                <td>Private</td>
+                <td>Over 1 year</td>
+            </tr>
+            <tr>
+                <td class="icon row2">Barrie</td>
+                <td>Springwater</td>
+                <td>25</td>
+                <td>SWEET CICELY ST</td>
+                <td>House</td>
+                <td>4 Bedrooms</td>
+                <td>No</td>
+                <td>$2,975</td>
+                <td>No</td>
+                <td>Private</td>
+                <td>6 months to 12 months</td>
+            </tr>
+            <tr>
+                <td class="icon row3">Collingwood</td>
+                <td>Collingwood</td>
+                <td>460</td>
+                <td>ONTARIO Street Unit #603</td>
+                <td>Apartment</td>
+                <td>2 Bedrooms</td>
+                <td>No</td>
+                <td>$2,100</td>
+                <td>Yes</td>
+                <td>Not Stated</td>
+                <td>Less than 6 months</td>
+            </tr>
+            <tr>
+                <td class="icon row4">Midland</td>
+                <td>Midland</td>
+                <td>652</td>
+                <td>NORMAN CRES</td>
+                <td>House</td>
+                <td>4 Bedrooms</td>
+                <td>Yes</td>
+                <td>$2,800</td>
+                <td>No</td>
+                <td>Not Stated</td>
+                <td>Winter (Seasonal Rental)</td>
+            </tr>
+            <tr>
+                <td class="icon row5">Orillia</td>
+                <td>Orillia</td>
+                <td>189</td>
+                <td>ISABELLA DR</td>
+                <td>Attached</td>
+                <td>3 Bedrooms</td>
+                <td>Yes</td>
+                <td>$2,700</td>
+                <td>Yes</td>
+                <td>Private</td>
+                <td>Over 1 year</td>
+            </tr>
+        </table>
+    </main>
+    <footer>
+        <aside>
+        &copy; Georgian College Web Project Studio 2023
+        <br/>
+        Team Marshmallow
+        </aside>
+        <div>
+            <p>Partners</p>
+            <div>
+                <img src="./public/images/CountyOfSimcoeLogo.png"/>
+                <p>County Of Simcoe</p>
+            </div>
+            <div>
+                <img src="./public/images/CCIS_Logo_Vertical.webp" />
+                <p>Georgian College CCSI</p>
+            </div>
+        </div>
+    </footer>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="js/rentalData.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 </html>
