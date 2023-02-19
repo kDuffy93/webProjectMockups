@@ -1,0 +1,94 @@
+p {
+    padding: 0;
+    margin: 0;
+}
+
+
+
+
+/*------------Header--------------*/
+header {
+    display: flex;
+    height: clamp(50px, 7.50vh, 100px);
+    background-color: #f0f0f0;
+}
+
+
+header>a {
+    width: 9vw;
+}
+
+header>a>img {
+    width: auto;
+    height: 90%;
+    margin: 1% 0 1% 2%;
+}
+
+header>nav>ul {
+    display: flex;
+    width: 89vw;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    height: 100%;
+    padding: 0;
+    gap:2.5%;
+}
+
+/* -------------------footer ------------ */
+
+footer {
+
+    height: 15vh;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 0vh;
+    right: 0;
+    width: 100%;
+}
+
+footer>aside {
+    width: 40%;
+    text-align: center;
+
+
+}
+
+footer>div {
+    height: 100%;
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(1fr, 5);
+
+    grid-template-areas: ". . title . ." " . partner1 . partner2 .";
+}
+
+footer>div>p {
+    grid-area: title;
+    text-align: center;
+    font-size: 8pt;
+    margin: 0;
+}
+
+footer>div>div:first-of-type {
+    grid-area: partner1;
+    height: inherit;
+    text-align: center;
+
+
+}
+
+footer>div>div:last-of-type {
+    grid-area: partner2;
+    height: inherit;
+    text-align: center;
+
+}
+
+footer>div>div:last-of-type>img,
+footer>div>div:first-of-type>img {
+    width: auto;
+    height: 8vh;
+}
