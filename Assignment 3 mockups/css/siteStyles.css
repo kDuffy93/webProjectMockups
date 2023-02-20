@@ -35,6 +35,10 @@ header>nav>ul {
     gap:2.5%;
 }
 
+header>nav>ul>li:last-of-type {
+    margin-right:2.5vw;
+}
+
 /* -------------------footer ------------ */
 
 footer {
